@@ -95,12 +95,12 @@ export default function BenefitsSection() {
       <div className="sticky top-0 h-screen overflow-hidden">
         
         {/* Progress Indicators - Terminal style */}
-        <div className="absolute top-8 right-8 z-50">
-          <div className="flex flex-col space-y-2">
+        <div className="absolute top-4 right-4 sm:top-8 sm:right-8 z-50">
+          <div className="flex flex-col space-y-1 sm:space-y-2">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={`progress-${benefit.id}`}
-                className={`w-12 h-12 rounded-full border-2 flex items-center justify-center text-white font-mono text-sm transition-all duration-300 ${
+                className={`w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-full border-2 flex items-center justify-center text-white font-mono text-xs sm:text-sm transition-all duration-300 ${
                   activeBenefit === index 
                     ? 'bg-white/20 border-white/80' 
                     : 'bg-transparent border-white/30'
@@ -113,7 +113,7 @@ export default function BenefitsSection() {
         </div>
         
         {/* Top 75% - Image/Video Area */}
-        <div className="relative h-[75vh] overflow-hidden bg-black">
+        <div className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[65vh] overflow-hidden bg-black">
           {benefits.map((benefit, index) => (
             <motion.div
               key={`media-${benefit.id}`}
@@ -153,24 +153,24 @@ export default function BenefitsSection() {
         </div>
 
         {/* Bottom 25% - White Text Area */}
-        <div className="h-[25vh] bg-white px-16 py-8 flex items-center">
+        <div className="h-[50vh] sm:h-[45vh] md:h-[40vh] lg:h-[35vh] bg-white px-4 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-10 md:py-12 flex items-start justify-center pt-12 sm:pt-16 md:pt-20 min-h-[350px]">
           <div className="max-w-6xl mx-auto w-full relative">
             {/* Show the active benefit */}
             <motion.div
               key={`text-${benefits[activeBenefit]?.id}`}
-              className="w-full flex items-start gap-16"
+              className="w-full flex flex-col lg:flex-row items-start gap-4 sm:gap-8 lg:gap-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
             >
               {/* Left Side - Benefit Number and Title */}
-              <div className="flex-shrink-0 w-1/2">
-                <div className="mb-4">
-                  <span className="text-lg font-light text-gray-500 uppercase tracking-wide">
+              <div className="flex-shrink-0 w-full lg:w-1/2">
+                <div className="mb-2 sm:mb-4">
+                  <span className="text-sm sm:text-lg font-light text-gray-500 uppercase tracking-wide">
                     Benefit {benefits[activeBenefit]?.id}
                   </span>
                 </div>
-                <h3 className="text-4xl font-bold text-black leading-tight">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black leading-tight">
                   {benefits[activeBenefit]?.title}{" "}
                   <span className="text-green-600 underline decoration-green-600 decoration-2 underline-offset-4">
                     {benefits[activeBenefit]?.titleHighlight}
@@ -179,8 +179,8 @@ export default function BenefitsSection() {
               </div>
               
               {/* Right Side - Description */}
-              <div className="flex-1 w-1/2">
-                <p className="text-base text-gray-600 leading-relaxed font-light">
+              <div className="flex-1 w-full lg:w-1/2">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-light">
                   {benefits[activeBenefit]?.description}
                 </p>
               </div>
