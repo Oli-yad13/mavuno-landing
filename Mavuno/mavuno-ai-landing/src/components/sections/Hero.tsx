@@ -49,27 +49,6 @@ export default function Hero() {
               </p>
             </motion.div>
             
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row items-start gap-4"
-            >
-              <Button 
-                size="lg"  
-                className="font-poppins bg-transparent border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg px-8 py-4 rounded-full transition-all duration-300"
-              >
-                SEE HOW IT WORKS
-              </Button>
-              
-              <a 
-                href="#partners" 
-                className="font-poppins text-white hover:text-green-400 transition-colors duration-300 text-lg font-medium border-b-2 border-transparent hover:border-white"
-              >
-                FOR FARMERS & PARTNERS →
-              </a>
-            </motion.div>
           </div>
         </div>
       </div>
